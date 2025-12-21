@@ -1,9 +1,18 @@
 ---
 name: defining-user-stories
-description: Guides creation of user stories and epics with acceptance criteria. Use when defining new features, writing Given-When-Then criteria, creating story logs, or breaking down large features into epics and stories.
+description: Guides creation of user stories and epic design documents. Use when defining new features, writing Given-When-Then criteria, creating story logs, or designing larger features that need scope definition.
 ---
 
 # Defining User Stories
+
+## Epic vs Story
+
+| Document | Purpose | When to Create |
+|----------|---------|----------------|
+| **Epic** | Design document defining scope, goals, and technical approach | When starting a larger feature |
+| **Story** | Incremental deliverable with acceptance criteria | As needed during development |
+
+**Agile approach**: Stories emerge during development. Do NOT define all stories upfront. Create each story when ready to implement it.
 
 ## User Story Format
 
@@ -31,7 +40,7 @@ Guidelines:
 
 ### File Naming
 
-UTC timestamp format: `<YYYYMMDDTHHMMSS>_<story-name>.story.md`
+UTC timestamp: `<YYYYMMDDTHHMMSS>_<story-name>.story.md`
 
 ```bash
 date -u +"%Y%m%dT%H%M%S"
@@ -44,31 +53,27 @@ date -u +"%Y%m%dT%H%M%S"
 
 ### Template
 
-See [STORY_TEMPLATE.md](STORY_TEMPLATE.md) for complete story log structure.
+See [STORY_TEMPLATE.md](STORY_TEMPLATE.md) for story log structure.
 
 ## Epic Documents
 
-For multi-story features:
+Epics are **design documents** that define:
+- Scope and non-scope
+- Motivation and goals
+- Technical design and terminology
+- User-facing changes
+- Error handling approach
+- Testing strategy
+
+### Location
 
 - Directory: `docs/stories/<YYYYMMDD>_<epic-name>/`
 - File: `<YYYYMMDDTHHMMSS>_<epic-name>.epic.md`
 
 See [EPIC_TEMPLATE.md](EPIC_TEMPLATE.md) for epic structure.
 
-## Example
+### Epic Workflow
 
-```markdown
-### User Story
-**As a CLI user, I want to initialize my workspace as a Git repository,
-so that I can sync my notes to GitHub.**
-
-### Acceptance Criteria
-
-#### 1. Initialization
-- [ ] **Given** a workspace without Git, **When** you run `sync init <url>`,
-      **Then** a Git repository is initialized
-
-#### 2. Error Cases
-- [ ] **Given** an invalid URL, **When** you run `sync init <url>`,
-      **Then** an error message explains the problem
-```
+1. Create epic design document with scope
+2. Implement stories incrementally (define each as needed)
+3. Update epic status as work progresses

@@ -1,8 +1,3 @@
-# Story Log Template
-
-Copy this template to create a new story log.
-
-```markdown
 ## Story Log
 
 ### Goal
@@ -54,4 +49,3 @@ Developer verification completed:
 - [Known limitations or technical debt]
 - [Future considerations]
 - [Potential risks to be aware of]
-```
