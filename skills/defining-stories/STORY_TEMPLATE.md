@@ -21,6 +21,9 @@
 #### 3. Error Cases
 - [ ] **Given** [error condition], **When** you [action], **Then** [expected error behavior]
 
+### Verification Approach
+[How will acceptance criteria be verified? Options: CLI commands, API calls, E2E tests, browser MCP tools, manual UI testing by PO, etc.]
+
 ### Out of Scope
 - [Explicitly list what won't be done in this story]
 - [Helps prevent scope creep and sets clear boundaries]

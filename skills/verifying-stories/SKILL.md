@@ -7,13 +7,29 @@ description: Guides developer verification before handoff. Use when completing i
 
 Developer verification ensures the implementation is ready for acceptance testing.
 
+## Verification Approach
+
+The approach should be defined at the **Define** stage in the story log. Options vary by project type:
+
+| Project Type | Verification Options |
+|--------------|---------------------|
+| CLI | Direct command execution, output comparison |
+| API | curl/httpie requests, API testing tools |
+| Web UI | E2E tests (Playwright, Cypress), browser MCP tools |
+| Mobile | Device/emulator testing, available MCP tools |
+| Library | Unit tests, integration tests |
+
+**If unsure**: Ask the product owner which approach fits best.
+
+**Use available tools**: If MCP tools or skills for testing are available, use them.
+
 ## Verification Checklist
 
-Copy and track progress:
+Adapt based on the verification approach defined in the story:
 
 ```
 Developer Verification:
-- [ ] All acceptance criteria manually tested
+- [ ] Acceptance criteria verified (per defined approach)
 - [ ] Error cases verified
 - [ ] Existing functionality not broken
 - [ ] All automated tests pass
@@ -23,17 +39,7 @@ Developer Verification:
 - [ ] Story log updated
 ```
 
-## Step-by-Step Process
-
-### 1. Manual Testing
-
-For each acceptance criterion:
-- Set up the **Given** precondition
-- Execute the **When** action
-- Verify the **Then** result
-- Document observations
-
-### 2. Automated Tests
+## Automated Tests
 
 Run the project's test suite:
 ```bash
@@ -43,7 +49,13 @@ deno task test
 pytest
 ```
 
-### 3. Code Quality
+### E2E Tests for Verification
+
+For UI-based projects, consider writing E2E tests:
+- Useful for repeatable verification
+- Discuss with PO whether to commit them (maintenance cost vs value)
+
+## Code Quality
 
 ```bash
 # Linting (adapt to your project)
@@ -57,7 +69,7 @@ Check for:
 - No uncontextualized `TODO` comments
 - No commented-out code blocks
 
-### 4. Update Story Log
+## Update Story Log
 
 Fill in "Acceptance Checks" section:
 ```markdown
@@ -66,10 +78,9 @@ Fill in "Acceptance Checks" section:
 **Status: Pending Product Owner Review**
 
 Developer verification completed:
-- Tested all 5 acceptance criteria manually
-- Verified error messages display correctly
-- Confirmed existing features still work
-- All 23 tests pass
+- [Describe how each criterion was verified]
+- [Note verification approach used]
+- [List any observations or limitations]
 ```
 
 ## Important
@@ -77,3 +88,4 @@ Developer verification completed:
 - **Do NOT check acceptance criteria checkboxes** — that is the product owner's responsibility
 - Set status to "Pending Product Owner Review"
 - Note any observations or edge cases discovered
+- If verification is limited, explain what was and wasn't verifiable

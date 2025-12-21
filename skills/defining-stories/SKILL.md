@@ -36,6 +36,23 @@ Guidelines:
 - Include happy paths AND error cases
 - Leave checkboxes unchecked (product owner checks them)
 
+## Verification Approach
+
+Define how each acceptance criterion will be verified. Options depend on project type:
+
+| Project Type | Verification Options |
+|--------------|---------------------|
+| CLI | Direct command execution |
+| API | curl/httpie, API testing tools |
+| Web UI | E2E tests, browser MCP tools |
+| Mobile | Device/emulator, MCP tools |
+| Library | Unit/integration tests |
+
+Include in story log:
+- How to verify each criterion
+- Required tools or MCP servers
+- Whether E2E tests should be committed
+
 ## Story Log Creation
 
 ### File Naming
