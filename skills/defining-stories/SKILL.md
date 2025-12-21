@@ -1,5 +1,5 @@
 ---
-name: defining-user-stories
+name: defining-stories
 description: Guides creation of user stories and epic design documents. Use when defining new features, writing Given-When-Then criteria, creating story logs, or designing larger features that need scope definition.
 ---
 

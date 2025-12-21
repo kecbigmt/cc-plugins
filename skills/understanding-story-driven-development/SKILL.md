@@ -9,22 +9,21 @@ Ensures every code change delivers user value through a structured workflow.
 
 ## Workflow Overview
 
-1. **Define** → User story with acceptance criteria
-2. **Plan** → Create story log document
-3. **Implement** → TDD with small steps
-4. **Verify** → Developer self-testing
-5. **Accept** → Product owner testing (timing flexible)
-6. **Publish** → Commit, push, and optionally create PR
+1. **Define** → User story with acceptance criteria (in story log)
+2. **Implement** → TDD with small steps
+3. **Verify** → Developer self-testing
+4. **Accept** → Product owner testing (timing flexible)
+5. **Publish** → Commit, push, and optionally create PR
 
 ## When to Use Each Skill
 
 | Task | Skill |
 |------|-------|
-| Writing user stories or epics | See [defining-user-stories](../defining-user-stories/SKILL.md) |
+| Writing user stories or epics | See [defining-stories](../defining-stories/SKILL.md) |
 | Coding and TDD inner loop | See [implementing-stories](../implementing-stories/SKILL.md) |
-| Pre-handoff self-testing | See [verifying-implementation](../verifying-implementation/SKILL.md) |
-| Commit, push, create PR | See [committing-and-publishing](../committing-and-publishing/SKILL.md) |
-| Product owner acceptance | See [acceptance-testing](../acceptance-testing/SKILL.md) |
+| Pre-handoff self-testing | See [verifying-stories](../verifying-stories/SKILL.md) |
+| Product owner acceptance | See [accepting-stories](../accepting-stories/SKILL.md) |
+| Commit, push, create PR | See [publishing-stories](../publishing-stories/SKILL.md) |
 
 ## Key Principles
 

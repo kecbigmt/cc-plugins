@@ -1,5 +1,5 @@
 ---
-name: acceptance-testing
+name: accepting-stories
 description: Guides product owner through systematic acceptance testing. Use when verifying acceptance criteria, checking story completion, or conducting final review before marking a story as done.
 ---
 

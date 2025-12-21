@@ -10,12 +10,11 @@ You are helping the user practice Story-driven Development.
 
 Ask the user what they want to do:
 
-1. **Define a new story** - Create user story with acceptance criteria
-2. **Create an epic** - Design document for a larger feature
-3. **Implement a story** - TDD inner loop guidance
-4. **Verify implementation** - Developer self-testing before handoff
-5. **Run acceptance testing** - Product owner verification
-6. **Commit and publish** - Commit, push, or create PR
+1. **Define** - Create user story or epic design document
+2. **Implement** - TDD inner loop guidance
+3. **Verify** - Developer self-testing before handoff
+4. **Accept** - Product owner verification
+5. **Publish** - Commit, push, or create PR
 
 ## If arguments provided
 

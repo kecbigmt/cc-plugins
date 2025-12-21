@@ -1,5 +1,5 @@
 ---
-name: committing-and-publishing
+name: publishing-stories
 description: Guides commit, push, and draft PR creation for stories. Use when ready to commit changes, pushing to remote, or creating a pull request for review.
 ---
 

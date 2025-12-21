@@ -1,5 +1,5 @@
 ---
-name: verifying-implementation
+name: verifying-stories
 description: Guides developer verification before handoff. Use when completing implementation, preparing for acceptance testing, or self-reviewing work before commit or PR.
 ---
 

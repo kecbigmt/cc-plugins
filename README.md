@@ -30,20 +30,19 @@ All skills are model-invoked and activate automatically based on your task conte
 | Skill | Activates When |
 |-------|----------------|
 | `understanding-story-driven-development` | Starting features, asking about workflow |
-| `defining-user-stories` | Writing stories, epics, acceptance criteria |
+| `defining-stories` | Writing stories, epics, acceptance criteria |
 | `implementing-stories` | Coding with TDD, working through criteria |
-| `verifying-implementation` | Self-testing before handoff |
-| `committing-and-publishing` | Committing, pushing, creating PRs |
-| `acceptance-testing` | Product owner verification |
+| `verifying-stories` | Self-testing before handoff |
+| `accepting-stories` | Product owner verification |
+| `publishing-stories` | Committing, pushing, creating PRs |
 
 ## Workflow
 
-1. **Define** → User story with Given-When-Then criteria
-2. **Plan** → Create timestamped story log
-3. **Implement** → TDD inner loop (red-green-refactor)
-4. **Verify** → Developer self-testing
-5. **Accept** → Product owner testing (timing flexible)
-6. **Publish** → Commit, push, optionally create PR
+1. **Define** → User story with acceptance criteria (in story log)
+2. **Implement** → TDD inner loop (red-green-refactor)
+3. **Verify** → Developer self-testing
+4. **Accept** → Product owner testing (timing flexible)
+5. **Publish** → Commit, push, optionally create PR
 
 ## Acceptance Testing Flexibility
 
@@ -74,11 +73,11 @@ commands/
   story.md                # /story command entry point
 skills/
   understanding-story-driven-development/
-  defining-user-stories/
+  defining-stories/
   implementing-stories/
-  verifying-implementation/
-  committing-and-publishing/
-  acceptance-testing/
+  verifying-stories/
+  accepting-stories/
+  publishing-stories/
 ```
 
 ## License
