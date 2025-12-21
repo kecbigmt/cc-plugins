@@ -1,11 +1,26 @@
 # Story-driven Development Plugin for Claude Code
 
-A Claude Code plugin providing model-invoked skills for practicing Story-driven Development. Skills activate automatically based on context—no slash commands needed.
+A Claude Code plugin for practicing Story-driven Development.
 
 ## Installation
 
 ```bash
 claude --plugin-dir /path/to/story-driven-cc
+```
+
+## Usage
+
+```
+/story                    # Start workflow (interactive)
+/story <free text>        # Start with intent
+```
+
+Examples:
+```
+/story
+/story add login feature
+/story verify
+/story run acceptance testing
 ```
 
 ## Skills
@@ -55,21 +70,15 @@ Claude will automatically use the relevant skill.
 ## Plugin Structure
 
 ```
+commands/
+  story.md                # /story command entry point
 skills/
   understanding-story-driven-development/
-    SKILL.md              # Workflow overview
   defining-user-stories/
-    SKILL.md              # Story/epic creation
-    STORY_TEMPLATE.md     # Story log template
-    EPIC_TEMPLATE.md      # Epic document template
   implementing-stories/
-    SKILL.md              # TDD inner loop
   verifying-implementation/
-    SKILL.md              # Developer verification
   committing-and-publishing/
-    SKILL.md              # Commit/push/PR
   acceptance-testing/
-    SKILL.md              # PO acceptance
 ```
 
 ## License
