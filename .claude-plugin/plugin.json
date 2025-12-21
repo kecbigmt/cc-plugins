@@ -1,0 +1,9 @@
+{
+  "name": "story",
+  "description": "Story-driven Development workflow plugin for Claude Code. Provides skills and commands for user story creation, acceptance criteria, verification, and story log management.",
+  "version": "1.0.0",
+  "author": {
+    "name": "kecbigmt"
+  },
+  "repository": "https://github.com/kecbigmt/story-driven-cc"
+}
