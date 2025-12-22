@@ -2,12 +2,16 @@
 
 A Claude Code plugin for practicing Story-driven Development.
 
-## Installation
+## Testing Locally
+
+To test this plugin during development:
 
 ```bash
 git clone https://github.com/kecbigmt/story-driven-cc.git
 claude --plugin-dir ./story-driven-cc
 ```
+
+Restart Claude Code after making changes to pick up updates.
 
 ## Usage
 
