@@ -5,27 +5,9 @@ description: Guides developer verification before handoff. Use when completing i
 
 # Verifying Implementation
 
-Developer verification ensures the implementation is ready for acceptance testing.
+Execute the verification approach defined in the story log.
 
-## Verification Approach
-
-The approach should be defined at the **Define** stage in the story log. Options vary by project type:
-
-| Project Type | Verification Options |
-|--------------|---------------------|
-| CLI | Direct command execution, output comparison |
-| API | curl/httpie requests, API testing tools |
-| Web UI | E2E tests (Playwright, Cypress), browser MCP tools |
-| Mobile | Device/emulator testing, available MCP tools |
-| Library | Unit tests, integration tests |
-
-**If unsure**: Ask the product owner which approach fits best.
-
-**Use available tools**: If MCP tools or skills for testing are available, use them.
-
-## Verification Checklist
-
-Adapt based on the verification approach defined in the story:
+## Checklist
 
 ```
 Developer Verification:
@@ -39,53 +21,34 @@ Developer Verification:
 - [ ] Story log updated
 ```
 
-## Automated Tests
+## Run Tests
 
-Run the project's test suite:
 ```bash
-# Example commands (adapt to your project)
-npm test
-deno task test
+npm test        # or
+deno task test  # or
 pytest
 ```
 
-### E2E Tests for Verification
-
-For UI-based projects, consider writing E2E tests:
-- Useful for repeatable verification
-- Discuss with PO whether to commit them (maintenance cost vs value)
-
 ## Code Quality
-
-```bash
-# Linting (adapt to your project)
-npm run lint
-deno lint
-ruff check .
-```
 
 Check for:
 - No `console.log`, `print()`, or debug statements
 - No uncontextualized `TODO` comments
-- No commented-out code blocks
 
 ## Update Story Log
 
-Fill in "Acceptance Checks" section:
 ```markdown
 ### Acceptance Checks
 
 **Status: Pending Product Owner Review**
 
 Developer verification completed:
-- [Describe how each criterion was verified]
-- [Note verification approach used]
-- [List any observations or limitations]
+- [How each criterion was verified]
+- [Observations or limitations]
 ```
 
 ## Important
 
-- **Do NOT check acceptance criteria checkboxes** — that is the product owner's responsibility
-- Set status to "Pending Product Owner Review"
-- Note any observations or edge cases discovered
-- If verification is limited, explain what was and wasn't verifiable
+- **Do NOT check acceptance criteria checkboxes** — PO responsibility
+- If verification approach wasn't defined, ask PO
+- If verification is limited, explain what wasn't verifiable
