@@ -25,16 +25,15 @@ Examples:
 
 ## Skills
 
-All skills are model-invoked and activate automatically based on your task context.
+Skills are model-invoked and activate based on workflow phase.
 
-| Skill | Activates When |
-|-------|----------------|
-| `understanding-story-driven-development` | Starting features, asking about workflow |
-| `defining-stories` | Writing stories, epics, acceptance criteria |
-| `implementing-stories` | Coding with TDD, working through criteria |
-| `verifying-stories` | Self-testing before handoff |
-| `accepting-stories` | Product owner verification |
-| `publishing-stories` | Committing, pushing, creating PRs |
+| Skill | Phase |
+|-------|-------|
+| `defining-stories` | Define |
+| `implementing-stories` | Implement |
+| `verifying-stories` | Verify |
+| `accepting-stories` | Accept |
+| `publishing-stories` | Publish |
 
 ## Workflow
 
@@ -72,7 +71,6 @@ Claude will automatically use the relevant skill.
 commands/
   start.md                # /story-driven:start command
 skills/
-  understanding-story-driven-development/
   defining-stories/
   implementing-stories/
   verifying-stories/

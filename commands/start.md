@@ -4,14 +4,27 @@ description: Start Story-driven Development workflow
 
 # Story-driven Development
 
-You are helping the user practice Story-driven Development.
+Ensures every code change delivers user value through a structured workflow.
 
-**First**, read the overview skill to understand the workflow:
-- See [understanding-story-driven-development](../skills/understanding-story-driven-development/SKILL.md)
+## Workflow
+
+1. **Define** → User story with acceptance criteria (in story log)
+2. **Implement** → TDD with small steps
+3. **Verify** → Developer self-testing
+4. **Accept** → Product owner testing (timing flexible)
+5. **Publish** → Commit, push, and optionally create PR
+
+## Key Principles
+
+- **User-focused**: Every change traces to user value
+- **Testable**: Given-When-Then acceptance criteria
+- **Incremental**: Small, reviewable steps
+- **Documented**: Story logs capture decisions and progress
+- **Agile**: Stories emerge during development, not all upfront
 
 ## If no arguments provided
 
-Ask the user what they want to do:
+Ask the user what phase they want to work on:
 
 1. **Define** - See [defining-stories](../skills/defining-stories/SKILL.md)
 2. **Implement** - See [implementing-stories](../skills/implementing-stories/SKILL.md)
@@ -24,11 +37,3 @@ Ask the user what they want to do:
 Interpret the user's intent from: $ARGUMENTS
 
 Then read the appropriate skill and guide the user through that phase.
-
-## Key Principles
-
-- Stories emerge during development (agile, not waterfall)
-- Each story is an independently deliverable increment
-- Acceptance criteria use Given-When-Then format
-- Product owner checks the acceptance criteria checkboxes
-- Acceptance testing timing is flexible (pre-commit, pre-push, or post-PR)
