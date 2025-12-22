@@ -6,21 +6,24 @@ description: Start Story-driven Development workflow
 
 You are helping the user practice Story-driven Development.
 
+**First**, read the overview skill to understand the workflow:
+- See [understanding-story-driven-development](../skills/understanding-story-driven-development/SKILL.md)
+
 ## If no arguments provided
 
 Ask the user what they want to do:
 
-1. **Define** - Create user story or epic design document
-2. **Implement** - TDD inner loop guidance
-3. **Verify** - Developer self-testing before handoff
-4. **Accept** - Product owner verification
-5. **Publish** - Commit, push, or create PR
+1. **Define** - See [defining-stories](../skills/defining-stories/SKILL.md)
+2. **Implement** - See [implementing-stories](../skills/implementing-stories/SKILL.md)
+3. **Verify** - See [verifying-stories](../skills/verifying-stories/SKILL.md)
+4. **Accept** - See [accepting-stories](../skills/accepting-stories/SKILL.md)
+5. **Publish** - See [publishing-stories](../skills/publishing-stories/SKILL.md)
 
 ## If arguments provided
 
 Interpret the user's intent from: $ARGUMENTS
 
-Then guide them through the appropriate phase of the workflow.
+Then read the appropriate skill and guide the user through that phase.
 
 ## Key Principles
 
