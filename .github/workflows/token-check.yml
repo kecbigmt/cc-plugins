@@ -1,0 +1,25 @@
+name: Token Check
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**/*.md'
+      - 'commands/**/*.md'
+  push:
+    branches:
+      - main
+    paths:
+      - 'skills/**/*.md'
+      - 'commands/**/*.md'
+
+jobs:
+  check-token-count:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Check token limits
+        run: ./scripts/check-tokens.sh
