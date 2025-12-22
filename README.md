@@ -5,7 +5,8 @@ A Claude Code plugin for practicing Story-driven Development.
 ## Installation
 
 ```bash
-claude --plugin-dir /path/to/story-driven-cc
+git clone https://github.com/kecbigmt/story-driven-cc.git
+claude --plugin-dir ./story-driven-cc
 ```
 
 ## Usage
