@@ -1,11 +1,12 @@
 #!/bin/bash
 set -e
 
-# Token checker for skills and commands
-# Skills should be concise per Anthropic best practices
+# Token and line checker for skills and commands
+# Per Anthropic best practices: SKILL.md body under 500 lines
 
-echo "Checking token limits for skills and commands..."
-echo "Target: ≤500 tokens, Maximum: ≤1000 tokens (fails)"
+echo "Checking skills and commands..."
+echo "Lines:  Maximum ≤500 (fails)"
+echo "Tokens: Target ≤500, Maximum ≤1000 (fails)"
 echo ""
 
 FAIL=0
@@ -57,18 +58,32 @@ while IFS= read -r file; do
   [ -z "$file" ] && continue
 
   if [ -f "$file" ]; then
+    lines=$(wc -l < "$file")
     tokens=$(uv run --with tiktoken python /tmp/count_tokens.py "$file")
 
+    line_status="✅"
+    token_status="✅"
     status="✅"
 
+    # Check lines (>500 fails)
+    if [ $lines -gt 500 ]; then
+      line_status="❌"
+      status="❌"
+      FAIL=1
+    fi
+
+    # Check tokens (>1000 fails, >500 warns)
     if [ $tokens -gt 1000 ]; then
+      token_status="❌"
       status="❌"
       FAIL=1
     elif [ $tokens -gt 500 ]; then
-      status="⚠️ "
+      token_status="⚠️ "
     fi
 
-    printf "%s %-50s %4d tokens\n" "$status" "$file" "$tokens"
+    printf "%s %s\n" "$status" "$file"
+    printf "   Lines:  %s %d\n" "$line_status" "$lines"
+    printf "   Tokens: %s %d\n" "$token_status" "$tokens"
   fi
 done <<< "$FILES"
 
@@ -77,9 +92,9 @@ rm -f /tmp/count_tokens.py
 
 echo ""
 if [ $FAIL -eq 1 ]; then
-  echo "❌ Token check FAILED"
-  echo "Files exceeding 1000 tokens should be split or trimmed."
+  echo "❌ Check FAILED"
+  echo "Files exceeding limits should be split or trimmed."
   exit 1
 else
-  echo "✅ Token check PASSED"
+  echo "✅ Check PASSED"
 fi
