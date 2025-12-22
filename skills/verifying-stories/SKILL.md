@@ -50,5 +50,6 @@ Developer verification completed:
 ## Important
 
 - **Do NOT check acceptance criteria checkboxes** — PO responsibility
-- If verification approach wasn't defined, ask PO
+- If verification approach wasn't defined or situation has changed, ask PO
+- Use available MCP tools or skills for testing if present
 - If verification is limited, explain what wasn't verifiable
