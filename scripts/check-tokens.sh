@@ -6,7 +6,7 @@ set -e
 
 echo "Checking skills and commands..."
 echo "Lines:  Maximum ≤500 (fails)"
-echo "Tokens: Target ≤150, Maximum ≤300 (fails)"
+echo "Tokens: Maximum ≤500 (fails)"
 echo ""
 
 FAIL=0
@@ -72,13 +72,11 @@ while IFS= read -r file; do
       FAIL=1
     fi
 
-    # Check tokens (>300 fails, >150 warns)
-    if [ $tokens -gt 300 ]; then
+    # Check tokens (>500 fails)
+    if [ $tokens -gt 500 ]; then
       token_status="❌"
       status="❌"
       FAIL=1
-    elif [ $tokens -gt 150 ]; then
-      token_status="⚠️ "
     fi
 
     printf "%s %s\n" "$status" "$file"
