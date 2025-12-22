@@ -11,15 +11,15 @@ claude --plugin-dir /path/to/story-driven-cc
 ## Usage
 
 ```
-/story-driven:story                    # Start workflow (interactive)
-/story-driven:story <free text>        # Start with intent
+/story-driven:start                    # Start workflow (interactive)
+/story-driven:start <free text>        # Start with intent
 ```
 
 Examples:
 ```
-/story-driven:story
-/story-driven:story add login feature
-/story-driven:story verify
+/story-driven:start
+/story-driven:start add login feature
+/story-driven:start verify
 ```
 
 ## Skills
@@ -69,7 +69,7 @@ Claude will automatically use the relevant skill.
 
 ```
 commands/
-  story.md                # /story-driven:story command
+  start.md                # /story-driven:start command
 skills/
   understanding-story-driven-development/
   defining-stories/
