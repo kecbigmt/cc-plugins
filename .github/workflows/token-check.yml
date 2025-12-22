@@ -1,16 +1,19 @@
 name: Token Check
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - 'skills/**/*.md'
       - 'commands/**/*.md'
+      - 'scripts/check-tokens.sh'
   push:
     branches:
       - main
     paths:
       - 'skills/**/*.md'
       - 'commands/**/*.md'
+      - 'scripts/check-tokens.sh'
 
 jobs:
   check-token-count:
