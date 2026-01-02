@@ -26,14 +26,14 @@ Ensures every code change delivers user value through a structured workflow.
 
 Ask the user what phase they want to work on:
 
-1. **Define** - See [defining-stories](../skills/defining-stories/SKILL.md)
-2. **Implement** - See [implementing-stories](../skills/implementing-stories/SKILL.md)
-3. **Verify** - See [verifying-stories](../skills/verifying-stories/SKILL.md)
-4. **Accept** - See [accepting-stories](../skills/accepting-stories/SKILL.md)
-5. **Publish** - See [publishing-stories](../skills/publishing-stories/SKILL.md)
+1. **Define** - Use the `defining-stories` skill
+2. **Implement** - Use the `implementing-stories` skill
+3. **Verify** - Use the `verifying-stories` skill
+4. **Accept** - Use the `accepting-stories` skill
+5. **Publish** - Use the `publishing-stories` skill
 
 ## If arguments provided
 
 Interpret the user's intent from: $ARGUMENTS
 
-Then read the appropriate skill and guide the user through that phase.
+Then invoke the appropriate skill to guide the user through that phase.
