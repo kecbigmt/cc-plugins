@@ -1,19 +1,37 @@
-# Story-driven Development Plugin for Claude Code
+# kecbigmt's Claude Code Plugins
 
-A Claude Code plugin for practicing Story-driven Development.
+A collection of Claude Code plugins.
+
+## Installation
+
+### From Marketplace (Recommended)
+
+```bash
+# Add the marketplace
+/plugin marketplace add kecbigmt/cc-plugins
+
+# Install the story-driven plugin
+/plugin install story-driven@kecbigmt-plugins
+```
+
+## Plugins
+
+### story-driven
+
+Story-driven Development workflow plugin for Claude Code. Provides skills and commands for user story creation, acceptance criteria, verification, and story log management.
 
 ## Testing Locally
 
-To test this plugin during development:
+To test plugins during development:
 
 ```bash
-git clone https://github.com/kecbigmt/story-driven-cc.git
-claude --plugin-dir ./story-driven-cc
+git clone https://github.com/kecbigmt/cc-plugins.git
+claude --plugin-dir ./cc-plugins/plugins/story-driven
 ```
 
 Restart Claude Code after making changes to pick up updates.
 
-## Usage
+## story-driven Usage
 
 ```
 /story-driven:start                    # Start workflow (interactive)
@@ -69,17 +87,18 @@ Ask Claude naturally:
 
 Claude will automatically use the relevant skill.
 
-## Plugin Structure
+## story-driven Plugin Structure
 
 ```
-commands/
-  start.md                # /story-driven:start command
-skills/
-  defining-stories/
-  implementing-stories/
-  verifying-stories/
-  accepting-stories/
-  publishing-stories/
+plugins/story-driven/
+  commands/
+    start.md                # /story-driven:start command
+  skills/
+    defining-stories/
+    implementing-stories/
+    verifying-stories/
+    accepting-stories/
+    publishing-stories/
 ```
 
 ## License

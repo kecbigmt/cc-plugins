@@ -1,0 +1,32 @@
+{
+  "name": "kecbigmt-plugins",
+  "owner": {
+    "name": "kecbigmt"
+  },
+  "metadata": {
+    "description": "kecbigmt's Claude Code plugins marketplace",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "story-driven",
+      "source": "./plugins/story-driven",
+      "description": "Story-driven Development workflow plugin for Claude Code. Provides skills and commands for user story creation, acceptance criteria, verification, and story log management.",
+      "version": "1.0.0",
+      "author": {
+        "name": "kecbigmt"
+      },
+      "homepage": "https://github.com/kecbigmt/story-driven-cc",
+      "repository": "https://github.com/kecbigmt/story-driven-cc",
+      "license": "MIT",
+      "keywords": [
+        "story-driven",
+        "development",
+        "workflow",
+        "tdd",
+        "user-stories"
+      ],
+      "category": "development-workflow"
+    }
+  ]
+}
