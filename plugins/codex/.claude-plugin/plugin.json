@@ -1,0 +1,9 @@
+{
+  "name": "codex",
+  "description": "Codex CLI integration for autonomous code analysis, reviews, and codebase queries with real-time execution visibility.",
+  "version": "1.0.0",
+  "author": {
+    "name": "kecbigmt"
+  },
+  "repository": "https://github.com/kecbigmt/cc-plugins"
+}
