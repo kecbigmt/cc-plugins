@@ -24,32 +24,23 @@ codex exec --full-auto --sandbox read-only --cd <project_directory> "<request>"
 
 ### 1. Determine the Request
 
-Based on user input, formulate a clear, specific request for codex. Examples:
+Formulate a clear, specific request. Examples:
 - "Review the authentication module for security vulnerabilities"
 - "Analyze the database query patterns for performance issues"
 - "Explain how the user registration flow works"
-- "Find potential bugs in error handling code"
 
 ### 2. Set Working Directory
 
-Use the current working directory or a user-specified project path:
-- Default: Current working directory (`$PWD`)
+- Default: `$PWD`
 - Custom: User-provided path
 
-### 3. Execute Codex
-
-Run the codex command with proper parameters:
+### 3. Execute & Monitor
 
 ```bash
-codex exec --full-auto --sandbox read-only --cd /path/to/project "Your request here"
+codex exec --full-auto --sandbox read-only --cd /path/to/project "Your request"
 ```
 
-### 4. Monitor Output
-
-- Display real-time output to the user
-- Show execution progress
-- Report any errors or issues
-- Present the final analysis results
+Display output, progress, errors, and final results to user.
 
 ## Example Usage Patterns
 
