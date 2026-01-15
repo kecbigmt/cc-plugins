@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-# Token and line checker for skills and commands
+# Token and line checker for skills, commands, and agents
 # Per Anthropic best practices: SKILL.md body under 500 lines
 
-echo "Checking skills and commands..."
+echo "Checking skills, commands, and agents..."
 echo "Lines:  Maximum ≤500 (fails)"
 echo "Tokens: Maximum ≤500 (fails)"
 echo ""
@@ -45,8 +45,8 @@ if __name__ == "__main__":
         sys.exit(1)
 PYTHON_SCRIPT
 
-# Find all skill and command markdown files
-FILES=$(find skills commands -name "*.md" 2>/dev/null | sort)
+# Find all skill, command, and agent markdown files
+FILES=$(find skills commands agents -name "*.md" 2>/dev/null | sort)
 
 if [ -z "$FILES" ]; then
   echo "⚠️  No files found to check"
