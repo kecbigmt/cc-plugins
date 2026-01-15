@@ -46,7 +46,8 @@ if __name__ == "__main__":
 PYTHON_SCRIPT
 
 # Find all skill, command, and agent markdown files
-FILES=$(find skills commands agents -name "*.md" 2>/dev/null | sort)
+# Search in both current directory and plugins/*/ subdirectories
+FILES=$(find . -type f \( -path "*/skills/*.md" -o -path "*/commands/*.md" -o -path "*/agents/*.md" \) 2>/dev/null | sort)
 
 if [ -z "$FILES" ]; then
   echo "⚠️  No files found to check"
