@@ -20,6 +20,10 @@ A collection of Claude Code plugins.
 
 Story-driven Development workflow plugin for Claude Code. Provides skills and commands for user story creation, acceptance criteria, verification, and story log management.
 
+### codex
+
+Codex CLI integration for autonomous code analysis, reviews, and codebase queries. Executes the codex tool with real-time execution visibility for deep codebase understanding.
+
 ## Testing Locally
 
 To test plugins during development:
@@ -44,6 +48,20 @@ Examples:
 /story-driven:start add login feature
 /story-driven:start verify
 ```
+
+## codex Usage
+
+The codex plugin provides the `codex-exec` skill that automatically activates when you request code analysis or reviews.
+
+Examples:
+```
+"Review the authentication module for security vulnerabilities"
+"Analyze the database query patterns for performance issues"
+"Explain how the user registration flow works"
+"Find potential bugs in error handling code"
+```
+
+Claude will automatically execute the codex CLI tool with appropriate parameters.
 
 ## Skills
 
