@@ -7,18 +7,15 @@ description: Guides commit, push, and draft PR creation for stories. Use when re
 
 ## Timing Flexibility
 
-Acceptance testing can occur at different points depending on team workflow:
+Acceptance can occur at different points:
 
 | Workflow | When to Accept |
 |----------|----------------|
-| Pre-commit | Developer verification → PO accepts → Commit |
-| Pre-push | Commit locally → PO accepts → Push |
-| Post-PR | Commit → Push → Draft PR → PO accepts → Ready for review |
+| Pre-commit | Dev verify → PO accept → Commit |
+| Pre-push | Commit → PO accept → Push |
+| Post-PR | Commit → Push → Draft PR → PO accept → Ready |
 
-Choose based on:
-- How quickly PO can review
-- Whether you need a deployed preview
-- Team conventions
+Choose based on PO availability and preview needs.
 
 ## Pre-Commit Checklist
 
@@ -32,28 +29,30 @@ Before Commit:
 
 ## Commit Message
 
-Use Conventional Commits format:
+**CRITICAL: Explain WHY, not WHAT (diff shows what)**
 
-```
-<type>(<scope>): <summary>
-
-<body explaining why this change is necessary>
-```
+Format: `<type>(<scope>): <summary>` + body
 
 Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`
 
-Example:
+Good example:
 ```
-feat(sync): implement workspace Git initialization
+feat(sync): enable GitHub backup for notes
 
-Enable users to sync their notes to GitHub by
-initializing the workspace as a Git repository.
+Users need version control and backup. This initializes
+the workspace as a Git repo to enable that workflow.
+```
+
+Bad (avoid):
+```
+feat(sync): add git init
+^^ Only describes what changed, not why it matters
 ```
 
 Guidelines:
-- Title: what changed and why it matters (imperative mood)
-- Body: why this change is necessary in broader context
-- Avoid restating what the diff shows
+- Title: what + business value (imperative, 50 chars)
+- Body: problem solved, context, user benefit
+- Never restate code changes
 
 ## Push
 
