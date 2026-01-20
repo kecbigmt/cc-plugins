@@ -1,65 +1,92 @@
 ---
 name: implementing-stories
-description: Guides the implementation inner loop with TDD practices. Use when coding a feature, writing tests, following red-green-refactor cycle, or working through acceptance criteria incrementally.
+description: Implement using TDD Red-Green cycle. Focus on Red-Green only; refactoring is separate step.
 ---
 
-# Implementing Stories
+# Implementing Stories (Red-Green)
 
-## Inner Loop Principles
+Implement using TDD Red-Green cycle. Refactoring happens separately with fresh context.
 
-- **Small steps**: One workflow, model, or behavior at a time
-- **Reviewable**: Each change should be easy to understand and revert
-- **Test-driven**: Write test first, then implementation
+## Context
 
-## TDD Cycle (Red-Green-Refactor)
+Find story log, understand codebase, identify what to implement.
 
-### 1. Red: Write Failing Test
+## Principles
 
+- Small steps: one behavior at a time
+- Test-driven: write test first
+- Red-Green focus: get tests passing, skip cleanup
+
+## TDD Cycle
+
+### Red: Write Failing Test
+
+- [ ] Write test defining behavior
+- [ ] Scaffold symbols (avoid "not found")
+- [ ] Confirm fails for right reason
+
+**Key**: Fails because feature missing, not syntax error.
+
+### Green: Make It Pass
+
+- [ ] Implement minimum to pass
+- [ ] No extras or cleanup
+- [ ] Confirm passes
+
+Don't worry about quality/duplication. Refactoring is next phase.
+
+## Map Criteria
+
+For each criterion:
+1. Identify behavior
+2. Write test (Given-When-Then)
+3. Implement minimum
+4. Next criterion (skip refactoring)
+
+## Update Story Log (REQUIRED)
+
+**CRITICAL**: Must update before finishing.
+
+```markdown
+### Implementation (Red-Green)
+
+**Status: Complete - Ready for Refactor**
+
+**Implemented:**
+- [Criterion]: [Approach]
+
+**Decisions:**
+- [Decision]: [Why]
+
+**Tests:**
+- [Test file]: [What tests]
+- Status: All passing (X)
+
+**Technical debt:**
+- [Item]: Duplication needing refactor
+- [Item]: Naming improvements
+
+**Next:** Refactor
 ```
-Task Progress:
-- [ ] Write test that defines desired behavior
-- [ ] Scaffold target symbols (empty bodies) to avoid "not found" errors
-- [ ] Confirm test fails for the right reason
-```
 
-### 2. Green: Make It Pass
+Steps:
+1. Find story log (docs/stories/**/*.story.md)
+2. Update "Completed Work Summary"
+3. Save and verify
 
-```
-Task Progress:
-- [ ] Implement minimum code to pass
-- [ ] No extra features or cleanup yet
-- [ ] Confirm test passes
-```
+## When to Stop
 
-### 3. Refactor: Clean Up
+- All criteria have passing tests
+- All tests pass
+- No syntax/type errors
+- **Story log updated**
 
-```
-Task Progress:
-- [ ] Improve code quality
-- [ ] Keep tests green
-- [ ] Remove duplication
-```
+**Only after story log updated**, pass to Refactor.
 
-## Mapping Acceptance Criteria to Implementation
+## Pitfalls
 
-For each acceptance criterion:
-
-1. Identify the behavior to implement
-2. Write a test that captures the Given-When-Then
-3. Implement the minimum to pass
-4. Refactor
-5. Move to the next criterion
-
-## Updating Story Log
-
-As you work, update "Completed Work Summary":
-- What was implemented
-- Key design decisions made
-- Test coverage added
-
-## Common Pitfalls
-
-- **Skipping tests**: Always write the test first
-- **Big steps**: Break down if a change touches many files
-- **Premature optimization**: Make it work, then make it right
-- **Ignoring error cases**: Implement error handling from acceptance criteria
+- Skipping tests
+- Big steps
+- Premature cleanup (resist refactoring)
+- Ignoring error handling
+- Over-implementation

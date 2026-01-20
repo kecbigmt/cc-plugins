@@ -1,6 +1,6 @@
 ---
 name: defining-stories
-description: Guides creation of user stories and epic design documents. Use when defining new features, writing Given-When-Then criteria, creating story logs, or designing larger features that need scope definition.
+description: Create user stories and epic design documents. Use when defining new features, writing Given-When-Then criteria, creating story logs, or designing larger features.
 ---
 
 # Defining Stories
@@ -52,11 +52,11 @@ File: `docs/stories/<YYYYMMDDTHHMMSS>_<name>.story.md`
 date -u +"%Y%m%dT%H%M%S"  # Generate timestamp
 ```
 
-See [STORY_TEMPLATE.md](STORY_TEMPLATE.md) for structure.
+Use the `story-template` skill for structure.
 
 ## Epic Documents
 
 Directory: `docs/stories/<YYYYMMDD>_<epic-name>/`
 File: `<YYYYMMDDTHHMMSS>_<epic-name>.epic.md`
 
-See [EPIC_TEMPLATE.md](EPIC_TEMPLATE.md) for structure.
+Use the `epic-template` skill for structure.
