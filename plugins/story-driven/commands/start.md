@@ -10,12 +10,23 @@ Ensures code changes deliver user value through structured workflow.
 
 **Skills** (main context) + **Subagents** (isolated context):
 
-1. **Define** → User story, criteria (defining-stories skill)
-2. **Implement** → TDD Red-Green (implementing-stories skill)
-3. **Refactor** → Code cleanup (refactor subagent, fresh context)
-4. **Verify** → AI acceptance testing (verify subagent, fresh context)
-5. **Code Review** → Commit, push, PR (preparing-review skill)
-6. **Acceptance Test** → *Optional* human PO (acceptance-testing skill)
+1. **Define** (`defining-stories` skill)
+   - User story, criteria, story log
+
+2. **Implement** (`implementing-stories` skill)
+   - Red (failing test), Green (pass), skip refactor
+
+3. **Refactor** (`refactor` subagent, fresh context)
+   - Duplication removal, naming, loose coupling, high cohesion, single responsibility
+
+4. **Verify** (`verify` subagent, fresh context)
+   - Acceptance tests via acceptance-tester, full suite, linting, story log
+
+5. **Code Review** (`preparing-review` skill)
+   - Commit (WHY not WHAT), push, PR
+
+6. **Acceptance Test** (`acceptance-testing` skill, *optional*)
+   - Human PO manual testing
 
 ## Principles
 
@@ -24,31 +35,11 @@ Ensures code changes deliver user value through structured workflow.
 - Story logs document progress
 - AI verification = human rigor, PO decides on manual testing
 
-## Phase Details
-
-**Define (skill):** User story, criteria, story log
-
-**Implement (skill):** Red (failing test), Green (pass), skip refactor
-
-**Refactor (subagent):** Duplication removal, naming, loose coupling, high cohesion, single responsibility
-
-**Verify (subagent):** Acceptance tests via acceptance-tester, full suite, linting, story log
-
-**Code Review (skill):** Commit (WHY not WHAT), push, PR
-
-**Acceptance Test (skill, optional):** Human PO manual testing
-
 ## Usage
 
-**No arguments:** Ask which phase:
-1. Define - `defining-stories` skill
-2. Implement - `implementing-stories` skill
-3. Refactor - `refactor` subagent via Task
-4. Verify - `verify` subagent via Task
-5. Code Review - `preparing-review` skill
-6. Acceptance Test - `acceptance-testing` skill
+**No arguments:** Ask which phase (refer to Workflow for skill/subagent names)
 
-**With arguments:** Invoke skill/subagent based on $ARGUMENTS intent.
+**With arguments:** Invoke skill/subagent based on $ARGUMENTS intent
 
 ## Benefits
 
