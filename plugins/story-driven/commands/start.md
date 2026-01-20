@@ -14,7 +14,7 @@ Ensures code changes deliver user value through structured workflow.
 2. **Implement** → TDD Red-Green (implementing-stories skill)
 3. **Refactor** → Code cleanup (refactor subagent, fresh context)
 4. **Verify** → AI acceptance testing (verify subagent, fresh context)
-5. **Code Review** → Commit, push, PR (code-review skill)
+5. **Code Review** → Commit, push, PR (preparing-review skill)
 6. **Acceptance Test** → *Optional* human PO (acceptance-testing skill)
 
 ## Principles
@@ -45,7 +45,7 @@ Ensures code changes deliver user value through structured workflow.
 2. Implement - `implementing-stories` skill
 3. Refactor - `refactor` subagent via Task
 4. Verify - `verify` subagent via Task
-5. Code Review - `code-review` skill
+5. Code Review - `preparing-review` skill
 6. Acceptance Test - `acceptance-testing` skill
 
 **With arguments:** Invoke skill/subagent based on $ARGUMENTS intent.
