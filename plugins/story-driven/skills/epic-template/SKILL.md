@@ -1,3 +1,8 @@
+---
+name: epic-template
+description: Epic design document template. Use when creating new epic documents or need epic structure reference.
+---
+
 # [Epic Name] – DESIGN
 
 Status: Draft | In Progress | Completed

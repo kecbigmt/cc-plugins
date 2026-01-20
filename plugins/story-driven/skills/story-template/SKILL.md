@@ -1,3 +1,8 @@
+---
+name: story-template
+description: Story log template for user stories. Use when creating new story documents or need story structure reference.
+---
+
 ## Story Log
 
 ### Goal
