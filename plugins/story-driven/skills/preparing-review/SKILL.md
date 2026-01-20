@@ -69,25 +69,7 @@ git push                      # subsequent
 
 ## Create PR
 
-```bash
-gh pr create --title "<title>" --body "$(cat <<'EOF'
-## Summary
-[What this accomplishes and why]
-
-## Story
-[Link: docs/stories/YYYYMMDDTHHMMSS_name.story.md]
-
-## Test Plan
-- [How verified]
-
-## Checklist
-- [ ] Tests pass
-- [ ] Linting clean
-- [ ] Criteria verified
-- [ ] Story log updated
-EOF
-)"
-```
+Use `pr-template` skill for PR structure and guidelines.
 
 ## Post-PR
 
