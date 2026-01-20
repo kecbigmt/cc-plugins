@@ -5,56 +5,60 @@ description: Commit, push, create PR. Use after verification passes and ready to
 
 # Preparing for Code Review
 
-Prepare verified code for team review. After Verify phase.
+## Pre-Commit Checklist
 
-## Context
-
-Read story log and git diff to understand changes.
-
-## Pre-Commit
-
-```bash
-npm test
-git status
-git diff
+```
+Before Commit:
+- [ ] Developer verification complete
+- [ ] All tests pass
+- [ ] Linting passes
+- [ ] Story log updated
 ```
 
-Check: tests pass, linting clean, story log updated, no debug code
+## Commit Granularity
+
+**CRITICAL: One intent per commit.** Split by "why" not "what".
+
+❌ FORBIDDEN:
+```bash
+git add .  # Groups unrelated changes
+git commit -m "add feature X and refactor Y"
+```
+
+✅ REQUIRED:
+```bash
+git add src/feature.ts tests/feature.test.ts
+git commit -m "feat: enable feature X"
+
+git add src/utils.ts
+git commit -m "refactor: extract common logic"
+```
 
 ## Commit Message
 
-**CRITICAL: Explain WHY, not WHAT**
+**CRITICAL: Explain WHY, not WHAT (diff shows what)**
 
 Format: `<type>(<scope>): <summary>` + body
 
-Types: feat, fix, refactor, test, docs, chore
+Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`
 
-**Good:**
+Good:
 ```
-feat(sync): enable GitHub backup
+feat(sync): enable GitHub backup for notes
 
 Users need version control. Initializes repo for that.
 ```
 
-**Bad:**
+Bad (avoid):
 ```
 feat(sync): add git init
+^^ Only what, not why it matters
 ```
 
-Guidelines: title = what + value (≤50 chars), body = why
-
-## Create Commit
-
-```bash
-git add .
-git commit -m "$(cat <<'EOF'
-<type>(<scope>): <summary>
-
-<body explaining why>
-EOF
-)"
-git log -1 --stat
-```
+Guidelines:
+- Title: what + value (imperative, ≤50 chars)
+- Body: problem solved, context, user benefit
+- Never restate code changes
 
 ## Push
 
@@ -66,19 +70,15 @@ git push                      # subsequent
 ## Create PR
 
 ```bash
-gh pr create --title "<type>(<scope>): <summary>" --body "$(cat <<'EOF'
+gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Summary
 [What this accomplishes and why]
 
 ## Story
 [Link: docs/stories/YYYYMMDDTHHMMSS_name.story.md]
 
-## Changes
-- [Change with rationale]
-
 ## Test Plan
 - [How verified]
-- [Evidence tests pass]
 
 ## Checklist
 - [ ] Tests pass
@@ -89,10 +89,9 @@ EOF
 )"
 ```
 
-## After PR
+## Post-PR
 
-1. Share PR URL
-2. Update story log:
+Update story log:
 
 ```markdown
 ### Pull Request
@@ -100,9 +99,3 @@ PR: [#123](url)
 Created: [date]
 Status: Ready for review
 ```
-
-## Fix Mistakes
-
-Wrong message: `git commit --amend && git push --force-with-lease`
-
-Wrong files: `git reset HEAD <file> && git commit --amend`
