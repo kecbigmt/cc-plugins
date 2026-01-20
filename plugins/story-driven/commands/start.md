@@ -4,36 +4,52 @@ description: Start Story-driven Development workflow
 
 # Story-driven Development
 
-Ensures every code change delivers user value through a structured workflow.
+Ensures code changes deliver user value through structured workflow.
 
 ## Workflow
 
-1. **Define** → User story with acceptance criteria (in story log)
-2. **Implement** → TDD with small steps
-3. **Verify** → Developer self-testing
-4. **Accept** → Product owner testing (timing flexible)
-5. **Publish** → Commit, push, and optionally create PR
+**Skills** (main context) + **Subagents** (isolated context):
 
-## Key Principles
+1. **Define** → User story, criteria (defining-stories skill)
+2. **Implement** → TDD Red-Green (implementing-stories skill)
+3. **Refactor** → Code cleanup (refactor subagent, fresh context)
+4. **Verify** → AI acceptance testing (verify subagent, fresh context)
+5. **Code Review** → Commit, push, PR (code-review skill)
+6. **Acceptance Test** → *Optional* human PO (acceptance-testing skill)
 
-- **User-focused**: Every change traces to user value
-- **Testable**: Given-When-Then acceptance criteria
-- **Incremental**: Small, reviewable steps
-- **Documented**: Story logs capture decisions and progress
-- **Agile**: Stories emerge during development, not all upfront
+## Principles
 
-## If no arguments provided
+- User-focused, testable (Given-When-Then), incremental (Red-Green-Refactor)
+- Skills for guidance, subagents for isolation
+- Story logs document progress
+- AI verification = human rigor, PO decides on manual testing
 
-Ask the user what phase they want to work on:
+## Phase Details
 
-1. **Define** - Use the `defining-stories` skill
-2. **Implement** - Use the `implementing-stories` skill
-3. **Verify** - Use the `verifying-stories` skill
-4. **Accept** - Use the `accepting-stories` skill
-5. **Publish** - Use the `publishing-stories` skill
+**Define (skill):** User story, criteria, story log
 
-## If arguments provided
+**Implement (skill):** Red (failing test), Green (pass), skip refactor
 
-Interpret the user's intent from: $ARGUMENTS
+**Refactor (subagent):** Duplication removal, naming, loose coupling, high cohesion, single responsibility
 
-Then invoke the appropriate skill to guide the user through that phase.
+**Verify (subagent):** Acceptance tests via acceptance-tester, full suite, linting, story log
+
+**Code Review (skill):** Commit (WHY not WHAT), push, PR
+
+**Acceptance Test (skill, optional):** Human PO manual testing
+
+## Usage
+
+**No arguments:** Ask which phase:
+1. Define - `defining-stories` skill
+2. Implement - `implementing-stories` skill
+3. Refactor - `refactor` subagent via Task
+4. Verify - `verify` subagent via Task
+5. Code Review - `code-review` skill
+6. Acceptance Test - `acceptance-testing` skill
+
+**With arguments:** Invoke skill/subagent based on $ARGUMENTS intent.
+
+## Benefits
+
+Skills share main context. Subagents (Refactor, Verify) provide fresh, isolated perspective.
