@@ -71,13 +71,3 @@ git push                      # subsequent
 
 Use `pr-template` skill for PR structure and guidelines.
 
-## Post-PR
-
-Update story log:
-
-```markdown
-### Pull Request
-PR: [#123](url)
-Created: [date]
-Status: Ready for review
-```
