@@ -27,6 +27,26 @@
         "user-stories"
       ],
       "category": "development-workflow"
+    },
+    {
+      "name": "tailscale",
+      "source": "./plugins/tailscale",
+      "description": "Tailscale networking utilities for Claude Code. Configure dev servers for remote access via Tailscale VPN.",
+      "version": "1.0.0",
+      "author": {
+        "name": "kecbigmt"
+      },
+      "homepage": "https://github.com/kecbigmt/cc-plugins",
+      "repository": "https://github.com/kecbigmt/cc-plugins",
+      "license": "MIT",
+      "keywords": [
+        "tailscale",
+        "networking",
+        "dev-server",
+        "remote-access",
+        "vpn"
+      ],
+      "category": "networking"
     }
   ]
 }
