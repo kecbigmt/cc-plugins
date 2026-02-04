@@ -1,0 +1,9 @@
+{
+  "name": "tailscale",
+  "description": "Tailscale networking utilities for Claude Code. Configure dev servers for remote access via Tailscale VPN.",
+  "version": "1.0.0",
+  "author": {
+    "name": "kecbigmt"
+  },
+  "repository": "https://github.com/kecbigmt/cc-plugins"
+}
